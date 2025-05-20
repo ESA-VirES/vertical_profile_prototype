@@ -15,8 +15,8 @@ In principle following main tasks are understood by component:
 The main interface for all of these components is the STAC catalog, so what needs to be understood is, can:
 
 * FedEO catalogue: Generate the collection as shown here?
-  - Footprint/geometry generation is not trivial, specific logic was used to create the item geometries for the items, potentially another interface can be provided to also extract footprints for curtains?
-  - There might also be an issue with Longitude values (go from 0 to 360; instead of -180 to 180) as well as antimeridian crossings, gaps in data, ...
+  - Footprint/geometry generation is not trivial, current extraction approach used for these examples not mature (creates asrtifacts), can this be handled by FedEO catalogue? or would potentially another interface be needed for footprint generation?
+  - There might also be a issues with Longitude values (go from 0 to 360; instead of -180 to 180) as well as antimeridian crossings, gaps in data, as it is long data going over poles and antimeridian as well as having "holes" when switching to calibration mode ...
 * View Server: Generate previews as generated here?
   - Current previews generated using vires python client connecting to VirES for Aeolus 
   - Could be conceived as to be generated dynamically or pre-rendered as assets
@@ -37,9 +37,9 @@ Example visualization using [Stac Browser](https://radiantearth.github.io/stac-b
 
 * geometry: Is of type `LineString`, should allow any stac viewer to load and preview the footprint in 2D. Could be used as basis for creating the 3D geometry
 * fixed_altitude_km: set to 24.0 km, can be adapted based on how the preview assets are rendered, this information could be used as part of generating the 3D geometry
-* track_point_count_original: the footprints have been simplified, so potentially this information is important to keep in the stac item, e.g. 11270,
-* track_point_count_simplified: simplified then is reduced to e.g. 196 coordinates,
-* simplification_tolerance_deg: and a simplification tolerance of e.g. 0.3 has been applied, depending on how large and exact the items are needed this can be adapted (will significantly increase the size of the catalog)
+* track_point_count_original: the footprints have been simplified, so potentially this information is important to keep in the stac item, e.g. 451,
+* track_point_count_simplified: simplified then is reduced to e.g. 90 coordinates,
+* simplification_tolerance_deg: and a simplification tolerance of e.g. 0.1 has been applied, depending on how large and exact the items are needed this can be adapted (will significantly increase the size of the catalog)
 
 In general multiple extensions could be used to improve the information available, i would propose to discuss mostly on the  important aspects for this exercise (creation of 3d curtains as visualization), but for the purpose of completion here are the other parameters added for now:
 
