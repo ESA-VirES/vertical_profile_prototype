@@ -51,3 +51,23 @@ In general multiple extensions could be used to improve the information availabl
 * start_time: "2023-04-23T06:39:21.167387Z",
 * end_time: "2023-04-23T08:09:54.188436Z",
 * datetime: "2023-04-23T06:39:21.167387Z"
+
+### Assets
+
+The rendered curtain is referenced as asset, and has following structure:
+
+```
+"assets": {
+    "curtain_preview": {
+      "href": "https://esa-vires.github.io/vertical_profile_prototype/assets/AE_OPER_ALD_U_N_2B_20230423T063958_20230423T081032_0001.png",
+      "type": "image/png",
+      "title": "Aeolus Rayleigh Curtain Plot",
+      "roles": [
+        "visual"
+      ]
+    }
+},
+```
+
+As quickly touched upon above, one might envision having multiple previews showing different aspects of the product (e.g. rayleigh and mie), if this is wanted i imagine we would need define the exact expected ids, to allow this interaction.
+Potentially a more flexible possibility would be the MEEO Viewer can filter all assets of the role "visual" and allow selecting them in order to apply them as texture on the 3d geometry.
