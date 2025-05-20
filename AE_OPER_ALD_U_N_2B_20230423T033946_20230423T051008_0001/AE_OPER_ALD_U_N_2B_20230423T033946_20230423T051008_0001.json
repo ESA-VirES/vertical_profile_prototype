@@ -802,7 +802,7 @@
   ],
   "assets": {
     "curtain_preview": {
-      "href": "curtains/aeolus_curtain.png",
+      "href": "https://esa-vires.github.io/vertical_profile_prototype/assets/AE_OPER_ALD_U_N_2B_20230423T033946_20230423T051008_0001.png",
       "type": "image/png",
       "title": "Aeolus Rayleigh Curtain Plot",
       "roles": [
