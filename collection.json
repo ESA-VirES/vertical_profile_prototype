@@ -1,0 +1,54 @@
+{
+  "type": "Collection",
+  "id": "aeolus-l2b-rayleigh-track",
+  "stac_version": "1.1.0",
+  "description": "Aeolus L2B Rayleigh wind profiles as simplified track lines",
+  "links": [
+    {
+      "rel": "root",
+      "href": "./collection.json",
+      "type": "application/json"
+    },
+    {
+      "rel": "item",
+      "href": "./AE_OPER_ALD_U_N_2B_20230423T012046_20230423T034008_0001/AE_OPER_ALD_U_N_2B_20230423T012046_20230423T034008_0001.json",
+      "type": "application/geo+json"
+    },
+    {
+      "rel": "item",
+      "href": "./AE_OPER_ALD_U_N_2B_20230423T033946_20230423T051008_0001/AE_OPER_ALD_U_N_2B_20230423T033946_20230423T051008_0001.json",
+      "type": "application/geo+json"
+    },
+    {
+      "rel": "item",
+      "href": "./AE_OPER_ALD_U_N_2B_20230423T050946_20230423T064020_0001/AE_OPER_ALD_U_N_2B_20230423T050946_20230423T064020_0001.json",
+      "type": "application/geo+json"
+    },
+    {
+      "rel": "item",
+      "href": "./AE_OPER_ALD_U_N_2B_20230423T063958_20230423T081032_0001/AE_OPER_ALD_U_N_2B_20230423T063958_20230423T081032_0001.json",
+      "type": "application/geo+json"
+    }
+  ],
+  "extent": {
+    "spatial": {
+      "bbox": [
+        [
+          -180,
+          -90,
+          180,
+          90
+        ]
+      ]
+    },
+    "temporal": {
+      "interval": [
+        [
+          "2023-04-23T01:20:09.163405Z",
+          "2023-04-23T08:09:54.188436Z"
+        ]
+      ]
+    }
+  },
+  "license": "proprietary"
+}
