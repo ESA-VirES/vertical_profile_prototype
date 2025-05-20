@@ -13,6 +13,7 @@ In principle following main tasks are understood by component:
 ## Considerations
 
 The main interface for all of these components is the STAC catalog, so what needs to be understood is, can:
+
 * FedEO catalogue: Generate the collection as shown here?
   - Footprint/geometry generation is not trivial, specific logic was used to create the item geometries for the items, potentially another interface can be provided to also extract footprints for curtains?
   - There might also be an issue with Longitude values (go from 0 to 360; instead of -180 to 180) as well as antimeridian crossings, gaps in data, ...
@@ -23,8 +24,12 @@ The main interface for all of these components is the STAC catalog, so what need
   - Wind velocity values are base on horizontal line of sight and are dependent on pass direction (ascending/descending), should the values for previews be normalized to account for that?
   - Different flags and observation types: The current previews were generated using the validity flag and (for rayleigh) only observation type clear was used, should this somehow be tracked in the stac item?
 * MEEO Viewer: Load the collection as present here and create a 3d visualization of it?
-  - 
+  - What complexity of geometry is acceptable?
+  - Is the information available enough?
+  - Could different asset previews be considered and made selectable (e.g. rayleigh vs mie)
 
+This example focuses on the L2B product, which seems to be the "main" product, but each product type (L1A, L1B, L2A, L2B, L2C) has largely different aspects to be considered, e.g. different types of aggregation: measurement, observation, groups, ...
+The Auxiliary products, are also even more different to these, so it would need to be defined if these are relevant. They can't be represented as vertical curtains in any case, more as points along the track.
 
 ## STAC item description
 * geometry: Is of type `LineString`, should allow any stac viewer to load and preview the footprint in 2D. Could be used as basis for creating the 3D geometry
@@ -33,7 +38,7 @@ The main interface for all of these components is the STAC catalog, so what need
 * track_point_count_simplified: simplified then is reduced to e.g. 196 coordinates,
 * simplification_tolerance_deg: and a simplification tolerance of e.g. 0.3 has been applied, depending on how large and exact the items are needed this can be adapted (will significantly increase the size of the catalog)
 
-In general multiple extensions could be used to improve the information available, i would propose to discuss mostly on the for this exercise (creation of 3d curtains as visualization) important aspects, but for the purpose of completion here are the other parameters added for now:
+In general multiple extensions could be used to improve the information available, i would propose to discuss mostly on the  important aspects for this exercise (creation of 3d curtains as visualization), but for the purpose of completion here are the other parameters added for now:
 
 * id: Uses the product identifier
 * platform: set to "Aeolus"
