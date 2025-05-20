@@ -32,6 +32,9 @@ This example focuses on the L2B product, which seems to be the "main" product, b
 The Auxiliary products, are also even more different to these, so it would need to be defined if these are relevant. They can't be represented as vertical curtains in any case, more as points along the track.
 
 ## STAC item description
+
+Example visualization using [Stac Browser](https://radiantearth.github.io/stac-browser/#/external/esa-vires.github.io/vertical_profile_prototype/collection.json)
+
 * geometry: Is of type `LineString`, should allow any stac viewer to load and preview the footprint in 2D. Could be used as basis for creating the 3D geometry
 * fixed_altitude_km: set to 24.0 km, can be adapted based on how the preview assets are rendered, this information could be used as part of generating the 3D geometry
 * track_point_count_original: the footprints have been simplified, so potentially this information is important to keep in the stac item, e.g. 11270,
